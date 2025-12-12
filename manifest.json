@@ -1,0 +1,16 @@
+{
+  "name": "Консультация с Александром Шаниным",
+  "short_name": "PsyConsult",
+  "description": "Персонализированный подбор формата психологической консультации",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2c3e50",
+  "icons": [
+    {
+      "src": "https://img.icons8.com/color/96/000000/psychology.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ]
+}

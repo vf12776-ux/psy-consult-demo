@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Александр Шанин | Инженер личных убеждений</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <!-- Иконка для PWA -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/color/96/000000/psychology.png">
+</head>
+<body>
+    <header>
+        <h1>Александр Шанин</h1>
+        <p class="subtitle">Инженер личных убеждений. Автор метода “Ролевой интеллект”.</p>
+    </header>
+
+    <main>
+        <section class="hero">
+            <p>Персонализированный подбор формата консультации на основе вашего запроса.</p>
+        </section>
+
+        <!-- КАЛЬКУЛЯТОР -->
+        <section class="calculator">
+            <h2>Подбор консультации</h2>
+
+            <div class="input-group">
+                <label>1. Основной запрос</label>
+                <select id="problemType">
+                    <option value="anxiety">Тревога, стресс, панические атаки</option>
+                    <option value="relationships">Отношения, коммуникация</option>
+                    <option value="self">Поиск себя, профориентация</option>
+                    <option value="psychosomatics">Психосоматика (в т.ч. аллергия)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>2. Желаемый формат</label>
+                <select id="format">
+                    <option value="video">Видео-консультация (Zoom, Meet)</option>
+                    <option value="audio">Аудио-звонок (телефон, Telegram)</option>
+                    <option value="chat">Текстовый формат (Telegram, email)</option>
+                    <option value="in_person">Личная встреча (Москва)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>3. Длительность сеанса</label>
+                <select id="duration">
+                    <option value="30">30 минут (пробная)</option>
+                    <option value="50" selected>50 минут (стандартная)</option>
+                    <option value="75">75 минут (углубленная)</option>
+                    <option value="90">90 минут (с детальным анализом)</option>
+                </select>
+            </div>
+
+            <button onclick="calculate()">Рассчитать стоимость</button>
+
+            <!-- Блок с результатом -->
+            <div class="result" id="resultBlock" style="display:none;">
+                <h3>Рекомендовано</h3>
+                <p><strong>Формат:</strong> <span id="selectedFormat"></span></p>
+                <p><strong>Длительность:</strong> <span id="selectedDuration"></span> минут</p>
+                <p class="price">Стоимость: <span id="totalPrice">0</span> руб.</p>
+                <p class="note">Включена подготовка, запись сессии (по желанию) и материалы.</p>
+
+                <!-- Призыв к действию -->
+                <a href="https://t.me/+ZYR3bwsimYA1OTgy" class="cta-button" target="_blank">
+                    💬 Обсудить и записаться в Telegram
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Демо-версия приложения. После фидбека от психоля будет доработана.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
