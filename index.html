@@ -77,5 +77,32 @@
     </footer>
 
     <script src="app.js"></script>
+    <button id="installButton" style="display:none; margin: 20px auto; padding: 12px 24px; background: #4CAF50; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
+    📲 Установить приложение
+</button>
+
+<script>
+let deferredPrompt;
+const installButton = document.getElementById('installButton');
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installButton.style.display = 'block';
+});
+installButton.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') {
+        installButton.style.display = 'none';
+        alert('Приложение установлено! Ищите иконку на главном экране.');
+    }
+    deferredPrompt = null;
+});
+window.addEventListener('appinstalled', () => {
+    installButton.style.display = 'none';
+    deferredPrompt = null;
+});
+</script>
 </body>
 </html>
